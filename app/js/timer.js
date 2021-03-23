@@ -1,14 +1,20 @@
 const moment = require('moment');
 let seconds;
+let timer;
 
 module.exports = {
   start(e) {
     let time = moment.duration(e.textContent);
     seconds = time.asSeconds();
-    setInterval(() => {
+    clearInterval(timer);
+    timer = setInterval(() => {
       seconds++;
       e.textContent = this.convertSecondsToHourFormat(seconds);
     }, 1000);
+  },
+
+  stop() {
+    clearInterval(timer);
   },
 
   convertSecondsToHourFormat(seconds) {

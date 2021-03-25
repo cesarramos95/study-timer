@@ -3,7 +3,8 @@ const timer = require('./timer');
 
 let linkAbout = document.querySelector('#link-about');
 let buttonPlay = document.querySelector('.button-play');
-let time = document.querySelector('.count');
+let counter = document.querySelector('.counter');
+let course = document.querySelector('.course');
 
 linkAbout.addEventListener('click', function(){
   ipcRenderer.send('open-about-window');
@@ -14,14 +15,13 @@ let isCounting = false;
 
 buttonPlay.addEventListener('click', function() {
   if (isCounting) {
-    timer.stop();
+    timer.stop(course.textContent);
     isCounting = false;
   } else {
-    timer.start(time);
+    timer.start(counter);
     isCounting = true;
   }
 
   images = images.reverse();
-  timer.start(time);
   buttonPlay.src = images[0];
 })

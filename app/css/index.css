@@ -54,14 +54,14 @@ html, body {
     display: block;
 }
 
-.count {
+.counter {
     font-size: 5.5em;
     color: #FFFFFF;
     display: inline-block;
     padding-top: 8px;
 }
 
-.curse-container {
+.course-container {
     height: 25%;
     width: 100%;
     text-align: center;
@@ -69,7 +69,7 @@ html, body {
     background-color: #97A7F2;
 }
 
-.curse {
+.course {
     display: inline-block;
     padding-top: 5px;
     font-size: 1.3em;
